@@ -28,6 +28,8 @@ public sealed class TradeDataTemplate : IDataTemplate
 
 	public DataTable BuildDataTable()
 	{
+		logger.LogInformation($"BuildDataTable called for TradeData DataTable");
+
 		var dataTable = new DataTable("TradeData");
 
 		var column = new DataColumn();

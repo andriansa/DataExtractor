@@ -17,8 +17,6 @@ using DataExtractor.Core.FileReader.Csv.DataTemplates;
 
 namespace DataExtractor.Core.FileReader.Csv;
 
-using DataExtractor.Core.Exceptions;
-
 public sealed class CsvFileReader : IFileReader
 {
 	private readonly ILogger<CsvFileReader> logger;
@@ -34,6 +32,8 @@ public sealed class CsvFileReader : IFileReader
 
 	public DataTable ReadFile(string filePath)
 	{
+		logger.LogInformation($"ReadFile called for {filePath}");
+
 		using var streamReader = fileManager.StreamReader(filePath);
 		using var csvReader = fileManager.CsvReader(streamReader, CultureInfo.InvariantCulture);
 

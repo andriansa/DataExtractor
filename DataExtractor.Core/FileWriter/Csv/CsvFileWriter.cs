@@ -27,6 +27,8 @@ public sealed class CsvFileWriter : IFileWriter
 
 	public void WriteToFile(string filePath, DataTable dataTable)
 	{
+		logger.LogInformation("WriteToFile called");
+
 		using var writer = fileManager.StreamWriter(filePath);
 		using var csv = fileManager.CsvWriter(writer, CultureInfo.InvariantCulture);
 

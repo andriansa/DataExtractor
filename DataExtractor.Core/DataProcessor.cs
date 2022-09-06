@@ -33,18 +33,26 @@ public sealed class DataProcessor
 
 	public void ExtractData(string inputFile, string outputFile)
 	{
+		logger.LogInformation("ExtractData called");
+
 		if (string.IsNullOrEmpty(inputFile))
 		{
+			logger.LogError("Input value missing for extracting data");
+
 			throw new InputFilePathMissingException("Input value missing for extracting data");
 		}
 
 		if (string.IsNullOrEmpty(outputFile))
 		{
+			logger.LogError("Output value missing for extracting data");
+
 			throw new OutputFilePathMissingException("Output value missing for extracting data");
 		}
 
 		if (!fileManager.Exists(inputFile))
 		{
+			logger.LogError("Input file does not exist");
+
 			throw new InputFileMissingException("Input file does not exist");
 		}
 
