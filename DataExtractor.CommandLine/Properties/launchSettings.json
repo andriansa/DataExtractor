@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DataExtractor.CommandLine": {
+      "commandName": "Project",
+      "commandLineArgs": "extract --input=C:\\Users\\andri\\Documents\\Projects\\solution_iss\\DataExtractor_Example_Input.csv --output=C:\\Users\\andri\\Documents\\Projects\\solution_iss\\DataExtractor_Output_1.csv\r\n"
+    }
+  }
+}
